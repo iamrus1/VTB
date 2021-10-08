@@ -30,11 +30,11 @@ def register_page(request):
             return redirect(reverse('login'))
 
     context = {'form': form}
-    return render(request, 'accounts/register.html', context)
+    return render(request, 'vtb_users/register.html', context)
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
     permission_denied_message = "NO! You are not authenticated for this action!"
     login_url = 'login/'
     raise_exception = True
-    template_name = 'accounts/profile.html'
+    template_name = 'vtb_users/profile.html'
