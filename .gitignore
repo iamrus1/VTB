@@ -1,6 +1,7 @@
 vtb_env
-VTB app/media
-VTB app/db.sqlite3
+venv
+media
+db.sqlite3
 **/pycache
 .env
 .idea
