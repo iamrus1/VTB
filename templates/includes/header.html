@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light bg-dark w-100">
+    <div class="container-fluid">
+        <div> 
+            <a class="navbar-brand h2 text-white" href="#">Project name</a>
+            {% if user.is_authenticated %}
+                <a class="navbar-brand text-white" href="{% url 'profile' %}">profile</a>
+            {% endif %}
+        </div>
+        
+        {% if user.is_authenticated %}
+            <a class="btn btn-outline-primary" href="{% url 'logout' %}">logout</a>
+        {% else %}
+            <a class="btn btn-outline-primary" href="{% url 'login' %}">login</a>
+        {% endif %}
+    </div>
+</nav>

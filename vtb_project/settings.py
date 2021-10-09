@@ -17,10 +17,10 @@ from pathlib import Path
 from dotenv import dotenv_values
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent
-ENV_PATH = os.path.join(BASE_DIR.parent, '.env')
+BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_PATH = os.path.join(BASE_DIR, '.env')
 env = dotenv_values(ENV_PATH)
-
+print('base dir:.....................' + str(BASE_DIR))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
