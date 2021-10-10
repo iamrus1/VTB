@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # My apps
     'django_bootstrap5',
     'vtb_users',
+    'main',
     # Default apps
     'django.contrib.admin',
     'django.contrib.auth',

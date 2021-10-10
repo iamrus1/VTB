@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block messages %}
+    {% bootstrap_messages %}
+{% endblock messages %}
+
+{% block content %}
+    {% for dataset in dataset_list %}
+        {% include "main/includes/dataset_card.html" with data=dataset.data %}    
+    {% endfor %}
+
+    <ul class="list-group">
+        <li class="list-group-item"><span class="text-secondary">username:</span> {{ user.username }}</li>
+        <li class="list-group-item"><span class="text-secondary">id:</span> {{ user.pk }}</li>
+        <li class="list-group-item"><span class="text-secondary">email:</span> {{ user.email }}</li>
+    </ul>
+{% endblock content%}
