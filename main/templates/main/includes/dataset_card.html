@@ -1,9 +1,9 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 200px">
     <div class="card-header">
         <h4 class="card-title">{{ dataset.name }}</h4>
     </div>
     <div class="card-body">
-        {% comment %} line of cards of quality, popularity and relevance {% endcomment %}
+        {{ dataset.quality }}|{{ dataset.actulity }}|{{ dataset.value }}
     </div>
     
     <div class="card-body">
@@ -12,17 +12,17 @@
                 row count: {{ dataset.row_count }}
             </li>
             <li class="list-group-item">field count: {{ dataset.filds_count }}</li>
-            <li class="list-group-item">last load: {{ dataset.last_load_datetime }} </li>
+            <li class="list-group-item">last load: {{ dataset.last_load }} </li>
             {% comment %} need to add filter for date {% endcomment %}
         </ul>
     </div>
 
     <div class="card-body">
-        tags: {% for tag in dataset.tags %} {{ tag.name }} {% endfor %}        
+        tags: {% for tag in dataset.tags %} <span class="border border-primary">{{ tag }}</span> {% endfor %}        
     </div>
     
     <div class="card-body">
-        <a href="{% url 'datset_detail' dataset.pk %}" class="card-link">info</a>
+        <a href="{% url 'dataset_detail' dataset.id %}" class="card-link">info</a>
         <a href="#" class="card-link"></a>
     </div>
 </div>

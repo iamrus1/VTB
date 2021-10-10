@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block messages %}
+    {% bootstrap_messages %}
+{% endblock messages %}
+
+{% block content %}
+    dataset title
+    <hr>
+    характеристики
+    <hr>
+    <a href="{% url 'dataset_sample_data' %}" class="btn btn-info">more about</a>
+    Structure:
+    <table class="table">
+        <thead>
+            <tr>
+                {% for field in dataset.fields %}
+                    {{ field.name }}
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in dataset.rows %}
+            <tr>
+                {% for field in row.fields %}
+                    {{ field.value }}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    features
+
+{% endblock content %}
